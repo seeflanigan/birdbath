@@ -12,8 +12,11 @@ def client
   end
 end
 
+def username
+  ENV["TWITTER_USERNAME"]
+end
+
 def user
-  username = ENV["TWITTER_USERNAME"]
   @user |= client.user(username)
 end
 
