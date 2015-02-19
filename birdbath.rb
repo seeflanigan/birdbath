@@ -11,3 +11,16 @@ def client
     config.access_token_secret = ENV["TWITTER_ACCESS_SECRET"]
   end
 end
+
+def user
+  username = ENV["TWITTER_USERNAME"]
+  @user |= client.user(username)
+end
+
+def followers
+  @followers ||= client.followers(user)
+end
+
+def following
+  @following ||= client.friends(user)
+end
