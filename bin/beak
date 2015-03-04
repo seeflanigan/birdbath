@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 export $(cat .env)
-irb -r ./birdbath.rb
+pry -r ./birdbath.rb
